@@ -1,0 +1,14 @@
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/bin/Debug/netcoreapp2.2/DatingApp.deps.json
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/bin/Debug/netcoreapp2.2/DatingApp.runtimeconfig.json
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/bin/Debug/netcoreapp2.2/DatingApp.runtimeconfig.dev.json
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/bin/Debug/netcoreapp2.2/DatingApp.dll
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/bin/Debug/netcoreapp2.2/DatingApp.pdb
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.csprojAssemblyReference.cache
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.csproj.CoreCompileInputs.cache
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.RazorAssemblyInfo.cache
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.RazorAssemblyInfo.cs
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.AssemblyInfoInputs.cache
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.AssemblyInfo.cs
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.RazorTargetAssemblyInfo.cache
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.dll
+/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.pdb
