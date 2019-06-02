@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { logging } from 'protractor';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -9,13 +10,17 @@ import { logging } from 'protractor';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   login() {
-    console.log(this.model);
+    this.authService.login(this.model).subscribe(next => {
+      console.log('Logged in successfully');
+    }, error => {
+      console.log('Failed to log in');
+    });
   }
 
 }
