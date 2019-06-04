@@ -12,3 +12,17 @@
 /Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.RazorTargetAssemblyInfo.cache
 /Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.dll
 /Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/Debug/netcoreapp2.2/DatingApp.pdb
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\bin\Debug\netcoreapp2.2\DatingApp.deps.json
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\bin\Debug\netcoreapp2.2\DatingApp.runtimeconfig.json
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\bin\Debug\netcoreapp2.2\DatingApp.runtimeconfig.dev.json
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\bin\Debug\netcoreapp2.2\DatingApp.dll
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\bin\Debug\netcoreapp2.2\DatingApp.pdb
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.csprojAssemblyReference.cache
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.csproj.CoreCompileInputs.cache
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.RazorAssemblyInfo.cache
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.RazorAssemblyInfo.cs
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.AssemblyInfoInputs.cache
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.AssemblyInfo.cs
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.RazorTargetAssemblyInfo.cache
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.dll
+C:\Users\roger\Documents\Projects\Udemy\Sally\DatingApp.API\obj\Debug\netcoreapp2.2\DatingApp.pdb

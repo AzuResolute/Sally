@@ -12412,28 +12412,33 @@
     ]
   },
   "packageFolders": {
-    "/Users/janczarinajavier/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\roger\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/janczarinajavier/EntityDatingApp/DatingApp.API/DatingApp.csproj",
+      "projectUniqueName": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj",
       "projectName": "DatingApp",
-      "projectPath": "/Users/janczarinajavier/EntityDatingApp/DatingApp.API/DatingApp.csproj",
-      "packagesPath": "/Users/janczarinajavier/.nuget/packages/",
-      "outputPath": "/Users/janczarinajavier/EntityDatingApp/DatingApp.API/obj/",
+      "projectPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj",
+      "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/janczarinajavier/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\roger\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
