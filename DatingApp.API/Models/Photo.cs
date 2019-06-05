@@ -10,5 +10,9 @@ namespace DatingApp.API.Models
         public DateTime DateAdded { get; set; }
         public bool IsMain { get; set; }
 
+        //Sets up relationship with User
+        public User User { get; set; }
+        public int UserId { get; set; }
+
     }
 }
