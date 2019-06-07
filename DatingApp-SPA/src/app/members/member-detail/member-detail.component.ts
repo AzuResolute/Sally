@@ -29,7 +29,7 @@ export class MemberDetailComponent implements OnInit {
         height: '500px',
         imagePercent: 100,
         thumbnailsColumns: 4,
-        imageAnimation: NgxGalleryAnimation.Fade,
+        imageAnimation: NgxGalleryAnimation.Slide,
         preview: false
       }
     ];
@@ -46,7 +46,8 @@ export class MemberDetailComponent implements OnInit {
         big: this.user.photos[i].url,
         description: this.user.photos[i].description
       });
-      return imageUrls;
+      console.log(imageUrls);
     }
+    return imageUrls;
   }
 }
