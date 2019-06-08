@@ -6,7 +6,7 @@ import { Photo } from 'src/app/_models/photo';
   templateUrl: './photo-editor.component.html',
   styleUrls: ['./photo-editor.component.css']
 })
-export class PhotoEditorComponent implements OnInit {in
+export class PhotoEditorComponent implements OnInit {
   @Input() photos: Photo[];
 
   constructor() { }
