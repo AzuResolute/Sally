@@ -29,8 +29,8 @@
           </div>
           <div class="card-footer">
             <div class="btn-group d-flex">
-              <button class="btn btn-primary w-100">Like</button>
-              <button class="btn btn-success w-100">Message</button>
+              <button class="btn btn-primary w-100" [disabled]>Like</button>
+              <button class="btn btn-success w-100" [disabled]>Message</button>
             </div>
           </div>
         </div>
@@ -52,9 +52,9 @@
           <tab heading="Photos">
             <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
           </tab>
-          <tab heading="Messages">
+          <!-- <tab heading="Messages">
             <p>Messages will go here</p>
-          </tab>
+          </tab> -->
         </tabset>
       </div>
     </div>
