@@ -3,7 +3,6 @@ import { User } from 'src/app/_models/user';
 import { UserService } from 'src/app/_services/user.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
-import { endWith } from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/_services/auth.service';
 
@@ -41,6 +40,10 @@ export class MemberEditComponent implements OnInit {
     }, error => {
       this.alertify.error(error);
     });
+  }
+
+  updateMainPhoto(photoUrl) {
+    this.user.photoUrl = photoUrl;
   }
 
 }
