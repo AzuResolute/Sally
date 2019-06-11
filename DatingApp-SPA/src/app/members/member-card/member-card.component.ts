@@ -8,6 +8,7 @@ import { User } from '../../_models/user';
 })
 export class MemberCardComponent implements OnInit {
   @Input() user: User;
+  defaultUserImg = '../../../assets/user.png';
 
   constructor() { }
 
