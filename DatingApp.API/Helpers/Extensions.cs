@@ -9,7 +9,7 @@ namespace DatingApp.API.Helpers
     {
         public static void AddApplicationError (this HttpResponse response, string message) {
             response.Headers.Add("Application-Error", message);
-            response.Headers.Add("Access-Control-Exponse-Headers", "Application-Error"); //to allow app error to be displayed
+            response.Headers.Add("Access-Control-Expose-Headers", "Application-Error"); //to allow app error to be displayed
             response.Headers.Add("Access-Control-Allow-Origin", "*");
         }
         public static int CalculateAge(this DateTime theDateTime) {
@@ -30,7 +30,7 @@ namespace DatingApp.API.Helpers
                 var camelCaseFormatter = new JsonSerializerSettings();
                 camelCaseFormatter.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 response.Headers.Add("Pagination", JsonConvert.SerializeObject(paginationHeader, camelCaseFormatter));
-                response.Headers.Add("Access-Control-Exponse-Headers", "Pagination");
+                response.Headers.Add("Access-Control-Expose-Headers", "Pagination");;
             }
     }
 
