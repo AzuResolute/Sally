@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using DatingApp.API.Models;
+using DatingApp.API.Helpers;
 
 namespace DatingApp.API.Data
 {
@@ -26,9 +27,9 @@ namespace DatingApp.API.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<IEnumerable<User>> GetUsers() {
-            var users = await _context.Users.Include(p => p.Photos).ToListAsync();
-            return users;
+        public async Task<PagedList<User>> GetUsers(UserParams userParams) {
+            var users = _context.Users.Include(p => p.Photos);
+            return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<User> GetUser(int id) {
