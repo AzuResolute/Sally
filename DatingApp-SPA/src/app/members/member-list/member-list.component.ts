@@ -11,6 +11,7 @@ import { PaginatedResult } from '../../_models/pagination';
   templateUrl: './member-list.component.html',
   styleUrls: ['./member-list.component.css']
 })
+
 export class MemberListComponent implements OnInit {
   users: User[];
   user: User = JSON.parse(localStorage.getItem('user'));
