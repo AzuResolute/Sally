@@ -44,8 +44,8 @@ namespace DatingApp.API.Controllers
 
         [HttpGet("{id}", Name = "GetPhoto")]
         public async Task<IActionResult> GetPhoto(int id) {
-            var photoFromRepo = await _repo.GetPhoto(id);
-            var photo = _mapper.Map<PhotoForReturnDto>(photoFromRepo);
+            Photo photoFromRepo = await _repo.GetPhoto(id);
+            PhotoForReturnDto photo = _mapper.Map<PhotoForReturnDto>(photoFromRepo);
             return Ok(photo);
         }
 
@@ -57,7 +57,7 @@ namespace DatingApp.API.Controllers
                 return Unauthorized();
             }
 
-            var userFromRepo = await _repo.GetUser(userId);
+            User userFromRepo = await _repo.GetUser(userId);
             var file = photosForCreationDto.File;
             
             var uploadResult = new ImageUploadResult();
@@ -81,7 +81,7 @@ namespace DatingApp.API.Controllers
             photosForCreationDto.PublicID = uploadResult.PublicId;
 
             // _mapper.Map<Return Value>(Source);
-            var photo = _mapper.Map<Photo>(photosForCreationDto);
+            Photo photo = _mapper.Map<Photo>(photosForCreationDto);
 
             if(!userFromRepo.Photos.Any(u => u.IsMain)) {
                 photo.IsMain = true;
@@ -92,7 +92,7 @@ namespace DatingApp.API.Controllers
 
             if(await _repo.SaveAll())
             {
-                var photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
+                PhotoForReturnDto photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
                 return CreatedAtRoute("GetPhoto", new {
                     id = photo.Id
                 }, photoToReturn);
@@ -108,19 +108,19 @@ namespace DatingApp.API.Controllers
                 return Unauthorized();
             }
 
-            var user = await _repo.GetUser(userId);
+            User user = await _repo.GetUser(userId);
 
             if(!user.Photos.Any(p => p.Id == id)) {
                 return Unauthorized();
             }
 
-            var photoFromRepo = await _repo.GetPhoto(id);
+            Photo photoFromRepo = await _repo.GetPhoto(id);
 
             if(photoFromRepo.IsMain) {
                 return BadRequest("This is already the main photo");
             }
 
-            var currentMainPhoto = await _repo.GetMainPhotoForUser(userId);
+            Photo currentMainPhoto = await _repo.GetMainPhotoForUser(userId);
 
             currentMainPhoto.IsMain = false;
             photoFromRepo.IsMain = true;
@@ -138,21 +138,21 @@ namespace DatingApp.API.Controllers
                 return Unauthorized();
             }
 
-            var user = await _repo.GetUser(userId);
+            User user = await _repo.GetUser(userId);
 
             if(!user.Photos.Any(p => p.Id == id)) {
                 return Unauthorized();
             }
 
-            var photoFromRepo = await _repo.GetPhoto(id);
+            Photo photoFromRepo = await _repo.GetPhoto(id);
 
             if(photoFromRepo.IsMain) {
                 return BadRequest("You cannot delete the main photo");
             }
 
             if(photoFromRepo.PublicID != null) {
-                var deleteParams = new DeletionParams(photoFromRepo.PublicID);
-                var result = _cloudinary.Destroy(deleteParams);
+                DeletionParams deleteParams = new DeletionParams(photoFromRepo.PublicID);
+                DeletionResult result = _cloudinary.Destroy(deleteParams);
 
                 if(result.Result == "ok") {
                     _repo.Delete(photoFromRepo);

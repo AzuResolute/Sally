@@ -15,7 +15,6 @@ namespace DatingApp.API.Data
             _context = context;
         }
         public void Add<T>(T entity) where T: class {
-            // No need to make async - We're not querying the database
             _context.Add(entity);
         }
 
@@ -28,17 +27,24 @@ namespace DatingApp.API.Data
         }
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams) {
-            var users = _context.Users.Include(p => p.Photos);
+
+            var users = _context.Users.Include(p => p.Photos).AsQueryable();
+
+            users = users.Where(u => u.Id != userParams.UserId);
+
+            users = users.Where(u => u.Gender == userParams.Gender);
+
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<User> GetUser(int id) {
-            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
+
+            User user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
 
         public async Task<Photo> GetPhoto(int id) {
-            var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
+            Photo photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);
             return photo;
         }
 
