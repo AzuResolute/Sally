@@ -104,6 +104,17 @@ namespace DatingApp.API.Data
             var photo = await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
             return photo;
         }
-    
+
+        public async Task<Message> GetMessage (int messageId) {
+           return await _context.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
+        }
+
+        public Task<PagedList<Message>> GetMessagesForUser() {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId){
+            throw new NotImplementedException();
+        }
     }
 }
