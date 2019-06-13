@@ -23,6 +23,11 @@ namespace DatingApp.API.Data
             _context.Remove(entity);
         }
 
+        public async Task<Like> GetLike(int userId, int recipientId) {
+            return await _context.Likes.FirstOrDefaultAsync(u => 
+                u.LikerId == userId && u.LikeeId == recipientId);
+        }
+
         public async Task<bool> SaveAll() {
             return await _context.SaveChangesAsync() > 0;
         }
