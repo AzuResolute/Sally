@@ -20,7 +20,8 @@ namespace DatingApp.API.Models
         public string City { get; set; }
         public string Country { get; set; }
 
-        //Sets up relationship with Photos
-        public ICollection<Photo> Photos { get; set; } // A single user can have many photos
+        public ICollection<Photo> Photos { get; set; } 
+        public ICollection<Like> Likers { get; set; }
+        public ICollection<Like> Likees { get; set; }
     }
 }
