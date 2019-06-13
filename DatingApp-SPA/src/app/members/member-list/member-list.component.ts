@@ -25,7 +25,6 @@ export class MemberListComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.users = data['users'].result;
       this.pagination = data['users'].pagination;
-      console.log(this.pagination);
     });
 
     this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
@@ -47,12 +46,13 @@ export class MemberListComponent implements OnInit {
   }
 
   loadUsers() {
-    this.userService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage, this.userParams).subscribe(
-      (response: PaginatedResult<User[]>) => {
+    this.userService.getUsers(
+      this.pagination.currentPage,
+      this.pagination.itemsPerPage,
+      this.userParams).subscribe((response: PaginatedResult<User[]>) => {
         this.users = response.result;
         this.pagination = response.pagination;
-      },
-      error => {
+      }, error => {
         this.alertify.error(error);
       }
     );
