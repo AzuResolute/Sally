@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -39,6 +40,27 @@ namespace DatingApp.API.Controllers
             }
 
             return Ok(message);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetMessagesForUser(int userId, [FromQuery]MessageParams MessageParams) {
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)) {
+                return Unauthorized();
+            }
+
+            MessageParams.UserId = userId;
+
+            PagedList<Message> messagesFromRepo = await _repo.GetMessagesForUser(MessageParams);
+
+            IEnumerable<MessageToReturnDto> messagesForUser = _mapper.Map<IEnumerable<MessageToReturnDto>>(messagesFromRepo);
+
+            Response.AddPagination(
+                messagesFromRepo.CurrentPage,
+                messagesFromRepo.PageSize,
+                messagesFromRepo.TotalCount,
+                messagesFromRepo.TotalPages);
+
+            return Ok(messagesForUser);
         }
 
         [HttpPost]

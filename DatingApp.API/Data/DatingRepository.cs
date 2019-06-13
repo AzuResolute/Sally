@@ -101,7 +101,7 @@ namespace DatingApp.API.Data
         }
 
         public async Task<Photo> GetMainPhotoForUser(int userId) {
-            var photo = await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+            Photo photo = await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
             return photo;
         }
 
@@ -109,8 +109,27 @@ namespace DatingApp.API.Data
            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == messageId);
         }
 
-        public Task<PagedList<Message>> GetMessagesForUser() {
-            throw new NotImplementedException();
+        public async Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams) {
+            IQueryable<Message> messages = _context.Messages
+                .Include(u => u.Sender).ThenInclude(p => p.Photos)
+                .Include(u => u.Recipient).ThenInclude(p => p.Photos)
+                .AsQueryable();
+
+            switch (messageParams.MessageContainer) {
+                case "Inbox":
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId);
+                    break;
+                case "Outbox":
+                    messages = messages.Where(u => u.SenderId == messageParams.UserId);
+                    break;
+                default: //Unread Messages
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId && !u.IsRead);
+                    break;
+            }
+
+            messages = messages.OrderByDescending(m => m.MessageSent);
+
+            return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
         public Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId){

@@ -1,4 +1,3 @@
-using DatingApp.API.Models;
 using System;
 
 namespace DatingApp.API.Dtos
