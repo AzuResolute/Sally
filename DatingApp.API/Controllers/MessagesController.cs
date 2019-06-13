@@ -54,12 +54,14 @@ namespace DatingApp.API.Controllers
                 return BadRequest("Could not find user");
             }
 
-            Message message = _mapper.Map<Message>(messageForCreationDto);
+            Message messageCreated = _mapper.Map<Message>(messageForCreationDto);
 
-            _repo.Add(message);
+            _repo.Add(messageCreated);
+
+            MessageForCreationDto messageToReturn = _mapper.Map<MessageForCreationDto>(messageCreated);
 
             if(await _repo.SaveAll()){
-                return CreatedAtRoute("GetMessage", new {messageId = message.Id}, message);
+                return CreatedAtRoute("GetMessage", new {messageId = messageCreated.Id}, messageToReturn);
             }
 
             throw new Exception("Failed on Save");
