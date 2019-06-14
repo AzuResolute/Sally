@@ -93,7 +93,9 @@ export class UserService {
         return paginatedResult;
       })
     );
+  }
 
-
+  getMessageThread(userId: number, recipientId: number) {
+    return this.http.get<Message[]>(this.baseUrl + userId + '/messages/thread/' + recipientId);
   }
 }
