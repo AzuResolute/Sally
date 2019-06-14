@@ -210,11 +210,11 @@
         ]
     },
     {
-        "Username": "Sosa",
+        "Username": "Chad",
         "Gender": "male",
         "DateOfBirth": "1995-09-13",
         "Password": "password",
-        "KnownAs": "Sosa",
+        "KnownAs": "Chad",
         "Created": "2019-04-10",
         "LastActive": "2019-04-10",
         "Introduction": "Enim officia velit ex dolore aliqua ullamco veniam anim exercitation non. Dolor minim fugiat duis velit adipisicing duis esse duis minim pariatur qui esse quis duis. Proident commodo est do anim. Ad dolor sit et irure deserunt cupidatat.\r\n",
@@ -329,7 +329,7 @@
         "Country": "Colombia",
         "Photos": [
         {
-            "url": "https://randomuser.me/api/portraits/men/53.jpg",
+            "url": "https://randomuser.me/api/portraits/men/54.jpg",
             "isMain": true,
             "description": "Nostrud dolor eu duis est proident voluptate sint culpa voluptate ullamco quis."
         }
