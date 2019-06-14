@@ -34,7 +34,7 @@ export class MemberDetailComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       const selectedTab = params['tab'];
       this.memberTabs.tabs[selectedTab > 0 ? selectedTab : 0].active = true;
-    })
+    });
 
     this.galleryOptions = [
       {
@@ -69,7 +69,7 @@ export class MemberDetailComponent implements OnInit {
     this.userService.sendLike(userId, recipientId).subscribe(() => {
       this.alertify.success('You have liked ' + this.user.knownAs);
     }, error => {
-      this.alertify.error(error);
+      this.alertify.error('Already liked this user');
     });
   }
 

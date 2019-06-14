@@ -53,18 +53,12 @@ export class RegisterComponent implements OnInit {
       this.alertify.success('Registration Successful');
     }, error => {
       this.alertify.error(error);
-      },() => {
+      }, () => {
         this.authService.login(this.user).subscribe(() => {
           this.router.navigate(['/members']);
         });
       });
     }
-    // this.authService.register(this.model).subscribe(() => {
-    //   this.alertify.success('Registration Successful');
-    // }, error => {
-    //   this.alertify.error(error);
-    // });
-    console.log(this.registerForm.value);
   }
 
   passwordMatchValidator(g: FormGroup) {

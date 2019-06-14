@@ -40,7 +40,7 @@ export class MemberMessagesComponent implements OnInit {
       .subscribe(messages => {
         this.messages = messages;
       }, error => {
-        this.alertify.error(error);
+        this.alertify.error('Message loading failed');
       });
   }
 
@@ -51,7 +51,7 @@ export class MemberMessagesComponent implements OnInit {
       this.messages.unshift(message);
       this.newMessage.content = '';
     }, error => {
-      this.alertify.error(error);
+      this.alertify.error('Message sending failed');
     });
   }
 }
