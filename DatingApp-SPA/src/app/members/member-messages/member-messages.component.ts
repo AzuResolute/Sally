@@ -12,6 +12,7 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 export class MemberMessagesComponent implements OnInit {
   @Input() recipientId: number;
   messages: Message[];
+  newMessage: any = {};
 
   constructor(
     private authService: AuthService,
@@ -27,6 +28,17 @@ export class MemberMessagesComponent implements OnInit {
     const userId = this.authService.decodedToken.nameid;
     this.userService.getMessageThread(userId, this.recipientId).subscribe(messages => {
       this.messages = messages;
+    }, error => {
+      this.alertify.error(error);
+    });
+  }
+
+  sendMessage() {
+    const userId = this.authService.decodedToken.nameid;
+    this.newMessage.recipientId = this.recipientId;
+    this.userService.sendMessage(userId, this.newMessage).subscribe((message: Message) => {
+      this.messages.unshift(message);
+      this.newMessage.content = '';
     }, error => {
       this.alertify.error(error);
     });
