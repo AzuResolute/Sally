@@ -20,12 +20,14 @@ Users can interact with others by:
 
 Register now and find your next match with Sally! <3
 
-## How to Start on Development Mode
+## Getting Started
 
-You will to install the following in order to run Sally:
+### Prerequisites
 
     - Microsoft Visual Studio or Miccrosoft Visual Code
     - Download at least the 2019 .Net Core SDK Ver 2.2 along with its Runtime counterpart.
+
+### Installing and Running on your local machine
 
 On your terminal, navigate to the DatingApp-SPA directory. This directory houses our Angular Framework. Run `npm install` to download Angular and other dependencies.
 
