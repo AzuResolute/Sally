@@ -12611,11 +12611,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj",
+      "projectUniqueName": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\DatingApp.csproj",
       "projectName": "DatingApp",
-      "projectPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj",
+      "projectPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\DatingApp.csproj",
       "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\obj\\",
+      "outputPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

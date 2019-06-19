@@ -1,6 +1,8 @@
 <div class="container mt-5">
   <div *ngIf="currentUser" class="container" style="text-align: center">
     <h4>Welcome {{currentUser.knownAs}}</h4>
+    <br/>
+    <h5>What do you think {{noun}}?</h5>
   </div>
   <div *ngIf="!registerMode && !currentUser" style="text-align: center">
     <h1>Find your match</h1>

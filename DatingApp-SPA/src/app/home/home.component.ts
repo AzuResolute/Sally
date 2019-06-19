@@ -11,6 +11,8 @@ import { User } from '../_models/user';
 export class HomeComponent implements OnInit {
   registerMode = false;
   currentUser: User = null;
+  matchedUser: User = null;
+  matchedNoun = 'them';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -19,8 +21,20 @@ export class HomeComponent implements OnInit {
     console.log(currentUser);
     if (currentUser) {
       this.currentUser = currentUser;
+      switch (currentUser.gender) {
+        case 'male':
+          this.matchedNoun = 'him';
+          break;
+        case 'female':
+          this.matchedNoun = 'her';
+          break;
+        default:
+          this.matchedNoun = 'them';
+          break;
+      }
     } else {
       this.currentUser = null;
+      this.matchedNoun = 'them';
     }
   }
 
