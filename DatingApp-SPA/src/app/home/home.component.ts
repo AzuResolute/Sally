@@ -10,18 +10,18 @@ import { User } from '../_models/user';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
-  // currentUser: User = null;
+  currentUser: User = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit() {
-    // const currentUser = this.authService.currentUser;
-    // console.log(currentUser);
-    // if (currentUser) {
-    //   this.currentUser = currentUser;
-    // } else {
-    //   this.currentUser = null;
-    // }
+    const currentUser = this.authService.currentUser;
+    console.log(currentUser);
+    if (currentUser) {
+      this.currentUser = currentUser;
+    } else {
+      this.currentUser = null;
+    }
   }
 
   registerToggle() {
