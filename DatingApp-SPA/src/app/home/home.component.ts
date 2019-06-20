@@ -13,6 +13,7 @@ import { AlertifyService } from '../_services/alertify.service';
 })
 export class HomeComponent implements OnInit {
   registerMode = false;
+  defaultUserImg = '../../../assets/user.png';
   currentUser: User = null;
   userParams: any = {};
   matchedUser: User = null;

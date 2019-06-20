@@ -2,7 +2,16 @@
   <div *ngIf="currentUser" class="container" style="text-align: center">
     <h4>Welcome {{currentUser.knownAs}}</h4>
     <br/>
-    <h5>What do you think {{noun}}?</h5>
+    <h5>What do you think of {{matchedUser.knownAs}}?</h5>
+    <div class="card-img-wrapper">
+      <img class="card-img-top" src="{{matchedUser.photoUrl || defaultUserImg}}" alt="{{matchedUser.knownAs}}">
+      </div>
+      <div class="card-body p-1">
+        <h6 class="card-title text-center mb-1">
+          <i class="fa fa-user">{{matchedUser.knownAs}}, {{matchedUser.age}}</i>
+        </h6>
+        <p class="card-text text-muted text-center">{{matchedUser.city}}</p>
+      </div>
   </div>
   <div *ngIf="!registerMode && !currentUser" style="text-align: center">
     <h1>Find your match</h1>
