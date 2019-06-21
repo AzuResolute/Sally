@@ -65,7 +65,7 @@ export function tokenGetter() {
       PaginationModule.forRoot(),
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
-      RouterModule.forRoot(appRoutes),
+      RouterModule.forRoot(appRoutes, {onSameUrlNavigation: 'reload'}),
       TabsModule.forRoot(),
       JwtModule.forRoot({
          config: {

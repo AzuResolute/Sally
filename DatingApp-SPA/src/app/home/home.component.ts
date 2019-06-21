@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     const currentUser = this.authService.currentUser;
-    if (currentUser) {
+    if (currentUser || currentUser === null) {
       this.currentUser = currentUser;
       this.userParams.gender = this.currentUser.gender === 'female' ? 'male' : 'female';
       this.userParams.minAge = 18;
@@ -65,7 +65,6 @@ export class HomeComponent implements OnInit {
       null,
       this.userParams).subscribe((response: PaginatedResult<User[]>) => {
         const users = response.result;
-        console.log('users ----> ', users);
         this.matchedUser = users[Math.floor(Math.random() * 8 + 1)];
       }, error => {
         this.alertify.error(error);
