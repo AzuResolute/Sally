@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
       this.userParams).subscribe((response: PaginatedResult<User[]>) => {
         const users = response.result;
         console.log('users ----> ', users);
-        this.matchedUser = users[users.length - 1];
+        this.matchedUser = users[Math.floor(Math.random() * 8 + 1)];
       }, error => {
         this.alertify.error(error);
       }
