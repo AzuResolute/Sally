@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\DatingApp.csproj": {}
+    "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\DatingApp.csproj": {
+    "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\DatingApp.csproj",
+        "projectUniqueName": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj",
         "projectName": "DatingApp",
-        "projectPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\DatingApp.csproj",
+        "projectPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\DatingApp.csproj",
         "packagesPath": "C:\\Users\\roger\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\datingapp.api\\obj\\",
+        "outputPath": "C:\\Users\\roger\\Documents\\Projects\\Udemy\\Sally\\DatingApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
