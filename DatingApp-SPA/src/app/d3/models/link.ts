@@ -1,4 +1,4 @@
-import { Node } from './node';
+import { Node } from './';
 
 export class Link implements d3.SimulationLinkDatum<Node> {
 

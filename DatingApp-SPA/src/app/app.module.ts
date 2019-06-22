@@ -11,6 +11,8 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
+import { UserService } from './_services/user.service';
+import { D3Service } from './d3/d3.service';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
@@ -20,7 +22,6 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
-import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
@@ -34,6 +35,9 @@ import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { GraphComponent } from './visuals/graph/graph.component';
+import { NodeVisualComponent } from './visuals/node-visual/node-visual.component';
+import { LinkVisualComponent } from './visuals/link-visual/link-visual.component';
+
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -54,7 +58,9 @@ export function tokenGetter() {
       PhotoEditorComponent,
       TimeAgoPipe,
       MemberMessagesComponent,
-      GraphComponent
+      GraphComponent,
+      NodeVisualComponent,
+      LinkVisualComponent
    ],
    imports: [
       BrowserModule,
@@ -88,7 +94,8 @@ export function tokenGetter() {
       MemberEditResolver,
       PreventUnsavedChanges,
       ListsResolver,
-      MessagesResolver
+      MessagesResolver,
+      D3Service
    ],
    bootstrap: [
       AppComponent
