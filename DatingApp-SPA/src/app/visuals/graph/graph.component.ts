@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-graph',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./graph.component.css']
 })
 export class GraphComponent implements OnInit {
+  @Input('nodes') nodes;
+  @Input('links') links;
 
   constructor() { }
 
