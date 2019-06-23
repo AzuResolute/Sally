@@ -37,6 +37,8 @@ import { MemberMessagesComponent } from './members/member-messages/member-messag
 import { GraphComponent } from './visuals/graph/graph.component';
 import { NodeVisualComponent } from './visuals/node-visual/node-visual.component';
 import { LinkVisualComponent } from './visuals/link-visual/link-visual.component';
+import { ZoomableDirective } from './d3/directives/zoomable.directive';
+import { DraggableDirective } from './d3/directives/draggable.directive';
 
 
 export function tokenGetter() {
@@ -60,7 +62,9 @@ export function tokenGetter() {
       MemberMessagesComponent,
       GraphComponent,
       NodeVisualComponent,
-      LinkVisualComponent
+      LinkVisualComponent,
+      ZoomableDirective,
+      DraggableDirective
    ],
    imports: [
       BrowserModule,
