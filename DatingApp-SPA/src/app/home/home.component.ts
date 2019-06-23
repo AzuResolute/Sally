@@ -5,6 +5,7 @@ import { User } from '../_models/user';
 import { PaginatedResult } from '../_models/pagination';
 import { UserService } from '../_services/user.service';
 import { AlertifyService } from '../_services/alertify.service';
+import { Node, Link } from '../d3/models';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit {
   userParams: any = {};
   matchedUser: User = null;
   matchedNoun = 'them';
+  nodes: Node[];
+  links: Link[];
 
   constructor(
     private http: HttpClient,

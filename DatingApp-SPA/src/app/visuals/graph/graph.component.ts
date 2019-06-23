@@ -4,7 +4,8 @@ import { D3Service } from '../../d3/d3.service';
 
 
 @Component({
-  selector: 'app-graph',
+// tslint:disable-next-line: component-selector
+  selector: 'graph',
   templateUrl: './graph.component.html',
   styleUrls: ['./graph.component.css']
 })
