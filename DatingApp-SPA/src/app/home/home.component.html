@@ -1,5 +1,5 @@
 <div class="container mastercont mt-5">
-  <div *ngIf="currentUser && matchedUser" class="mastercont" style="text-align: center">
+  <div *ngIf="currentUser && matchedUser && matchedUser !== null" class="mastercont" style="text-align: center">
     <h4>Welcome {{currentUser.knownAs}}</h4>
     <br/>
     <h5>What do you think of {{matchedUser.knownAs}}</h5>
@@ -16,7 +16,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="!registerMode && !currentUser" style="text-align: center">
+  <div *ngIf="!registerMode || !matchedUser" style="text-align: center">
     <h1>Find your match</h1>
     <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
     <div class="text-center">
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div *ngIf="registerMode && !currentUser" class="container">
+  <div *ngIf="registerMode && !matchedUser" class="container">
     <div class="row justify-content-center">
       <div class="col-4">
         <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>

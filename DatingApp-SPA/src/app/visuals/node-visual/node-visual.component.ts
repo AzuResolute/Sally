@@ -6,6 +6,6 @@ import { Node } from 'src/app/d3/models';
   templateUrl: './node-visual.component.html',
   styleUrls: ['./node-visual.component.css']
 })
-export class NodeVisualComponent{
+export class NodeVisualComponent {
   @Input('nodeVisual') node: Node;
 }
