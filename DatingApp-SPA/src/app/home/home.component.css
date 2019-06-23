@@ -5,7 +5,7 @@
     opacity: 0.7;
 } */
 
-.container {
+.mastercont {
     display: flex;
     flex-direction: column;
     align-items: center;
