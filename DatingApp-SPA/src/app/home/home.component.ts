@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
     private http: HttpClient,
     private authService: AuthService,
     private userService: UserService,
-    private alertify: AlertifyService) { }
+    private alertify: AlertifyService
+  ) { }
 
   async ngOnInit() {
     const currentUser = await this.authService.currentUser;
