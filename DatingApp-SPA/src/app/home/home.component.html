@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <div *ngIf="currentUser" class="container" style="text-align: center">
+  <div *ngIf="currentUser && matchedUser" class="container" style="text-align: center">
     <h4>Welcome {{currentUser.knownAs}}</h4>
     <br/>
     <h5>What do you think of {{matchedUser.knownAs}}</h5>
@@ -35,5 +35,5 @@
   </div>
 </div>
 
-<!-- <graph [nodes]="nodes" [links]="links"></graph> -->
+<graph [nodes]="nodes" [links]="links"></graph>
 
