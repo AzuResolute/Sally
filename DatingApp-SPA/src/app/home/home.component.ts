@@ -63,6 +63,10 @@ export class HomeComponent implements OnInit {
     this.registerMode = registerMode;
   }
 
+  loggedIn() {
+    return this.authService.loggedIn();
+  }
+
   loadRecommendation() {
     this.userService.getUsers(
       null,
