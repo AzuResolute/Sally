@@ -11,7 +11,7 @@
         <i class="fa fa-user">{{matchedUser.knownAs}}, {{matchedUser.age}}</i>
       </h6>
       <p class="card-text text-muted text-center">{{matchedUser.city}}</p>
-      <button class="btn btn-success w-100" [routerLink]="['/members/', matchedUser.id]">See My Profile</button>
+      <button class="btn btn-success w-100" [routerLink]?="['/members/', matchedUser.id]">See My Profile</button>
     </div>
   </div>
 </div>
