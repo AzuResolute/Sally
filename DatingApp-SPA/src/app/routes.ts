@@ -12,6 +12,7 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
 
 export const appRoutes: Routes = [
     // Each Route is an Object - With path and component
@@ -31,6 +32,7 @@ export const appRoutes: Routes = [
             },
             {path: 'lists', component: ListsComponent, resolve: {users: ListsResolver}},
             {path: 'messages', component: MessagesComponent, resolve: {messages: MessagesResolver}},
+            {path: 'recommendations', component: RecommendationsComponent, resolve: {users: MemberListResolver}}
         ]
     },
     {path: '**', redirectTo: '', pathMatch: 'full'}

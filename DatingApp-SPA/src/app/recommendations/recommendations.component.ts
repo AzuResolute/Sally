@@ -17,8 +17,8 @@ export class RecommendationsComponent implements OnInit {
   userParams: any = {};
   matchedUser: User = null;
   matchedNoun = 'them';
-  nodes: Node[];
-  links: Link[];
+  // nodes: Node[];
+  // links: Link[];
 
   constructor(
     private authService: AuthService,
@@ -26,22 +26,44 @@ export class RecommendationsComponent implements OnInit {
     private alertify: AlertifyService
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const currentUser = await this.authService.currentUser;
+    if (currentUser) {
+      this.currentUser = currentUser;
+      this.userParams.gender = this.currentUser.gender === 'female' ? 'male' : 'female';
+      this.userParams.minAge = 18;
+      this.userParams.maxAge = 65;
+      this.loadRecommendation();
 
+      switch (currentUser.gender) {
+        case 'male':
+          this.matchedNoun = 'him';
+          break;
+        case 'female':
+          this.matchedNoun = 'her';
+          break;
+        default:
+          this.matchedNoun = 'them';
+          break;
+        }
+    } else {
+      this.currentUser = null;
+      this.matchedNoun = 'them';
+    }
   }
 
-  // loadRecommendation() {
-  //   this.userService.getUsers(
-  //     null,
-  //     null,
-  //     this.userParams).subscribe((response: PaginatedResult<User[]>) => {
-  //       const users = response.result;
-  //       const randomNum = Math.floor(Math.random() * (8 + 1));
-  //       this.matchedUser = users[randomNum];
-  //     }, error => {
-  //       this.alertify.error(error);
-  //     }
-  //   );
-  // }
+  loadRecommendation() {
+    this.userService.getUsers(
+      null,
+      null,
+      this.userParams).subscribe((response: PaginatedResult<User[]>) => {
+        const users = response.result;
+        const randomNum = Math.floor(Math.random() * (8 + 1));
+        this.matchedUser = users[randomNum];
+      }, error => {
+        this.alertify.error(error);
+      }
+    );
+  }
 
 }
