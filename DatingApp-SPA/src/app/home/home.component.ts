@@ -75,6 +75,11 @@ export class HomeComponent implements OnInit {
         const users = response.result;
         const randomNum = Math.floor(Math.random() * (8 + 1));
         this.matchedUser = users[randomNum];
+        if (this.matchedUser === null) {
+          setTimeout(() => {
+            this.loadRecommendation();
+          }, 50);
+        }
       }, error => {
         this.alertify.error(error);
       }

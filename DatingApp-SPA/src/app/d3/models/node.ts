@@ -10,6 +10,7 @@ export class Node implements d3.SimulationNodeDatum {
     fx?: number | null;
     fy?: number | null;
     id: string;
+    linkCount = 0; /* optional */
     constructor(id) {
         this.id = id;
     }
