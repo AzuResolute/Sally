@@ -13,10 +13,12 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
+import { LearnComponent } from './learn/learn.component';
 
 export const appRoutes: Routes = [
     // Each Route is an Object - With path and component
     {path: '', component: HomeComponent},
+    {path: 'learn', component: LearnComponent},
     {
         path: '',
         runGuardsAndResolvers: 'always',

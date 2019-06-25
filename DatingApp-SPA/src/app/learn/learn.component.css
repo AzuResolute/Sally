@@ -1,0 +1,14 @@
+.intro {
+    display: flex;
+    justify-content: center;
+}
+
+.guest {
+    background-color: lightpink;
+}
+
+img.logo {
+    max-width: 100px;
+    max-width: 100px;
+    border: 4px ridge rosybrown;
+}

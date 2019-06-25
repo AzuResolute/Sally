@@ -1,15 +1,18 @@
-<div class="container mastercont mt-5">
-  <app-recommendations *ngIf="currentUser && matchedUser && loggedIn()"></app-recommendations>
-  <div *ngIf="!registerMode && !loggedIn()" style="text-align: center">
+<div class="container mt-5" *ngIf="loggedIn()">
+  <app-recommendations *ngIf="currentUser && matchedUser"></app-recommendations>
+</div>
+  
+<div class="guest" *ngIf="!loggedIn()">
+  <div *ngIf="!registerMode" style="text-align: center" class="container mt-5">
     <h1>Find your match</h1>
     <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
     <div class="text-center">
       <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
-      <!-- <button class="btn btn-info btn-lg">Learn more</button> -->
+      <button class="btn btn-info btn-lg" [routerLink]="['/learn']">Learn more</button>
     </div>
   </div>
 
-  <div *ngIf="registerMode && !loggedIn()" class="container">
+  <div *ngIf="registerMode" class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-4">
         <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
@@ -17,4 +20,3 @@
     </div>
   </div>
 </div>
-

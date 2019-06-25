@@ -16,7 +16,7 @@ export class ForceDirectedGraph {
     public _nodes: Node[] = [];
     public _links: Link[] = [];
 
-    constructor(nodes, links, options: {width, height}) {
+    constructor(nodes, links, options: {width: any, height: any}) {
         this._nodes = nodes;
         this._links = links;
         this.initSimulation(options);

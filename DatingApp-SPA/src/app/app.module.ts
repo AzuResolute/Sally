@@ -40,6 +40,7 @@ import { LinkVisualComponent } from './visuals/link-visual/link-visual.component
 import { ZoomableDirective } from './d3/directives/zoomable.directive';
 import { DraggableDirective } from './d3/directives/draggable.directive';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
+import { LearnComponent } from './learn/learn.component';
 
 
 export function tokenGetter() {
@@ -66,7 +67,8 @@ export function tokenGetter() {
       LinkVisualComponent,
       ZoomableDirective,
       DraggableDirective,
-      RecommendationsComponent
+      RecommendationsComponent,
+      LearnComponent
    ],
    imports: [
       BrowserModule,
