@@ -3,12 +3,20 @@
     justify-content: center;
 }
 
-.guest {
-    background-color: lightpink;
+.fa-heart{
+    color: red;
+}
+
+.fa-flask{
+    color: green;
+}
+
+.fa-laptop{
+    color: blue;
 }
 
 img.logo {
-    max-width: 100px;
-    max-width: 100px;
+    max-width: 150px;
+    max-height: 150px;
     border: 4px ridge rosybrown;
 }
