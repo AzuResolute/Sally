@@ -19,8 +19,6 @@ export class HomeComponent implements OnInit {
   userParams: any = {};
   matchedUser: User = null;
   matchedNoun = 'them';
-  nodes: Node[];
-  links: Link[];
 
   constructor(
     private http: HttpClient,
