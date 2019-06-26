@@ -10,10 +10,12 @@ export class Node implements d3.SimulationNodeDatum {
     fx?: number | null;
     fy?: number | null;
     id: string;
+    name?: string;
     linkCount = 0;
 
-    constructor(id) {
+    constructor(id, name?) {
         this.id = id;
+        this.name = name;
     }
 
     prop = () => {
@@ -25,11 +27,11 @@ export class Node implements d3.SimulationNodeDatum {
       }
 
     get fontSize() {
-    return (8 + (window.innerWidth) / 50) + 'px';
+        return (8 + (window.innerWidth) / 50) + 'px';
     }
 
     get color() {
-    const index = Math.floor(APP_CONFIG.SPECTRUM.length * this.prop());
-    return APP_CONFIG.SPECTRUM[index];
+        const index = Math.floor(APP_CONFIG.SPECTRUM.length * this.prop());
+        return APP_CONFIG.SPECTRUM[index];
     }
 }
