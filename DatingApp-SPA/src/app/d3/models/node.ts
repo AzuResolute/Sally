@@ -16,20 +16,20 @@ export class Node implements d3.SimulationNodeDatum {
         this.id = id;
     }
 
-    normal = () => {
+    prop = () => {
         return Math.sqrt(this.linkCount / APP_CONFIG.N);
     }
 
     get r() {
-        return 50 * this.normal() + 10;
+        return Math.max(window.innerWidth / 12, 40);
       }
 
     get fontSize() {
-    return (30 * this.normal() + 10) + 'px';
+    return (8 + (window.innerWidth) / 50) + 'px';
     }
 
     get color() {
-    const index = Math.floor(APP_CONFIG.SPECTRUM.length * this.normal());
+    const index = Math.floor(APP_CONFIG.SPECTRUM.length * this.prop());
     return APP_CONFIG.SPECTRUM[index];
     }
 }

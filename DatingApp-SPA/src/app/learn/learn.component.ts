@@ -43,7 +43,7 @@ export class LearnComponent implements OnInit {
       imgUrl: '../../assets/tech/Cloudinary.jpg'
     },
     {
-      name: 'Azure Cloud Platform & Services',
+      name: 'Azure Cloud',
       type: 'Deployment/Storage',
       imgUrl: '../../assets/tech/Azure.jpg'
     },
@@ -71,6 +71,10 @@ export class LearnComponent implements OnInit {
     for (let i = 1; i <= N; i++) {
       this.nodes.push(new Node(i));
     }
+
+    // for (let i = 0; i < this.techStack.length; i++) {
+    //   this.nodes.push(new Node(this.techStack[i].name));
+    // }
 
     for (let i = 1; i <= N; i++) {
       for (let m = 2; i * m <= N; m++) {

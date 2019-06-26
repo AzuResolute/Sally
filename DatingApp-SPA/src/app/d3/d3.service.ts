@@ -30,7 +30,7 @@ export class D3Service {
             d3.event.sourceEvent.stopPropagation();
 
             if (!d3.event.active) {
-                graph.simulation.alphaTarget(0.3).restart();
+                graph.simulation.alphaTarget(2).restart();
             }
 
             d3.event.on('drag', dragged).on('end', ended);

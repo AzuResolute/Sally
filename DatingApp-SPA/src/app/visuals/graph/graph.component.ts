@@ -26,7 +26,6 @@ export class GraphComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.graph = this.d3Service.getForceDirectedGraph(this.nodes, this.links, this.options);
-
     this.graph.ticker.subscribe((d) => {
       this.cdRef.markForCheck();
     });
