@@ -4,68 +4,89 @@ import { Node } from './node';
 import * as d3 from 'd3';
 
 const FORCES = {
-    LINKS: 1 / 50,
-    COLLISION: 1,
-    CHARGE: -1
-};
+  LINKS: 1 / 50,
+  COLLISION: 1,
+  CHARGE: -1
+}
 
 export class ForceDirectedGraph {
-    public ticker: EventEmitter<d3.Simulation<Node, Link>> = new EventEmitter();
-    public simulation: d3.Simulation<any, any>;
+  public ticker: EventEmitter<d3.Simulation<Node, Link>> = new EventEmitter();
+  public simulation: d3.Simulation<any, any>;
 
-    public _nodes: Node[] = [];
-    public _links: Link[] = [];
+  public nodes: Node[] = [];
+  public links: Link[] = [];
 
-    constructor(nodes, links, options: {width: any, height: any}) {
-        this._nodes = nodes;
-        this._links = links;
-        this.initSimulation(options);
+  constructor(nodes, links, options: { width, height }) {
+    this.nodes = nodes;
+    this.links = links;
+
+    this.initSimulation(options);
+  }
+
+  connectNodes(source, target) {
+    let link;
+
+    if (!this.nodes[source] || !this.nodes[target]) {
+      throw new Error('One of the nodes does not exist');
     }
 
-    initNodes() {
-        if (!this.simulation) {
-            throw new Error('simulation was not initialized yet');
-        }
+    link = new Link(source, target);
+    this.simulation.stop();
+    this.links.push(link);
+    this.simulation.alphaTarget(0.3).restart();
 
-        this.simulation.nodes(this._nodes);
+    this.initLinks();
+  }
+
+  initNodes() {
+    if (!this.simulation) {
+      throw new Error('simulation was not initialized yet');
     }
 
-    initLinks() {
-        if (!this.simulation) {
-            throw new Error('simulation was not initialized yet');
-        }
+    this.simulation.nodes(this.nodes);
+  }
 
-        this.simulation.force('links',
-            d3.forceLink(this._links)
-                .strength(FORCES.LINKS));
+  initLinks() {
+    if (!this.simulation) {
+      throw new Error('simulation was not initialized yet');
     }
 
-    initSimulation(options) {
-        if (!options || !options.with || !options.height) {
-            throw new Error('missing options when initializing simulation');
-        }
+    this.simulation.force('links',
+      d3.forceLink(this.links)
+        .id(d => d['id'])
+        .strength(FORCES.LINKS)
+    );
+  }
 
-        if (!this.simulation) {
-            const ticker = this.ticker;
-
-            this.simulation = d3.forceSimulation()
-                .force('charge',
-                d3.forceManyBody()
-                    .strength(FORCES.CHARGE)
-            );
-
-            this.simulation.on('tick', function() {
-                ticker.emit(this);
-            });
-
-            this.initNodes();
-            this.initLinks();
-        }
-
-        this.simulation.force('centers', d3.forceCenter(
-            options.width / 2, options.height / 2
-        ));
-
-        this.simulation.restart();
+  initSimulation(options) {
+    if (!options || !options.width || !options.height) {
+      throw new Error('missing options when initializing simulation');
     }
+
+    if (!this.simulation) {
+      const ticker = this.ticker;
+
+      this.simulation = d3.forceSimulation()
+        .force('charge',
+          d3.forceManyBody()
+            .strength(d => FORCES.CHARGE * d['r'])
+        )
+        .force('collide',
+          d3.forceCollide()
+            .strength(FORCES.COLLISION)
+            .radius(d => d['r'] + 5).iterations(2)
+        );
+
+      this.simulation.on('tick', function () {
+        ticker.emit(this);
+      });
+
+      this.initNodes();
+      this.initLinks();
+    }
+
+    this.simulation.force('centers', d3.forceCenter(options.width / 2, options.height / 2));
+
+    this.simulation.restart();
+  }
 }
