@@ -11,11 +11,14 @@ export class Node implements d3.SimulationNodeDatum {
     fy?: number | null;
     id: string;
     name?: string;
+    imgUrl?: string;
     linkCount = 0;
 
-    constructor(id, name?) {
+    constructor(id, properties?) {
         this.id = id;
-        this.name = name;
+        this.name = properties.name;
+        this.imgUrl = properties.imgUrl;
+        console.log(this.imgUrl);
     }
 
     prop = () => {
@@ -27,7 +30,7 @@ export class Node implements d3.SimulationNodeDatum {
       }
 
     get fontSize() {
-        return (8 + (window.innerWidth) / 50) + 'px';
+        return (6 + (window.innerWidth) / 75) + 'px';
     }
 
     get color() {

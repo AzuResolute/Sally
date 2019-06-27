@@ -69,7 +69,7 @@ export class LearnComponent implements OnInit {
           getIndex = number => number - 1;
 
     for (let i = 1; i <= N; i++) {
-      this.nodes.push(new Node(i));
+      this.nodes.push(new Node(i, this.techStack[i]));
     }
 
     // for (let i = 0; i < this.techStack.length; i++) {
