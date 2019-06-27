@@ -72,10 +72,6 @@ export class LearnComponent implements OnInit {
       this.nodes.push(new Node(i, this.techStack[i - 1]));
     }
 
-    // for (let i = 0; i < this.techStack.length; i++) {
-    //   this.nodes.push(new Node(this.techStack[i].name));
-    // }
-
     for (let i = 1; i <= N; i++) {
       for (let m = 2; i * m <= N; m++) {
         this.nodes[getIndex(i)].linkCount++;
