@@ -18,7 +18,6 @@ export class Node implements d3.SimulationNodeDatum {
         this.id = id;
         this.name = properties.name;
         this.imgUrl = properties.imgUrl;
-        console.log(this.imgUrl);
     }
 
     prop = () => {
