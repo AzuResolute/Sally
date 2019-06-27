@@ -34,7 +34,7 @@ export const appRoutes: Routes = [
             },
             {path: 'lists', component: ListsComponent, resolve: {users: ListsResolver}},
             {path: 'messages', component: MessagesComponent, resolve: {messages: MessagesResolver}},
-            {path: 'recommendations', component: RecommendationsComponent, resolve: {users: MemberListResolver}}
+            {path: 'recommendations', component: RecommendationsComponent}
         ]
     },
     {path: '**', redirectTo: '', pathMatch: 'full'}

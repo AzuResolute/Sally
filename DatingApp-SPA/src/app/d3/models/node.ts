@@ -25,7 +25,7 @@ export class Node implements d3.SimulationNodeDatum {
     }
 
     get r() {
-        return Math.max(Math.min(window.innerWidth / 12, 80), 40);
+        return Math.max(Math.min(window.innerWidth / 12, window.innerHeight / 4, 60), 40);
       }
 
     get fontSize() {
