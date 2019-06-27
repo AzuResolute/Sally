@@ -21,15 +21,16 @@
       [attr.fill]="'url(#'+ node.id +')'"
       cx="0"
       cy="0"
-      [attr.r]="node.r">
+      [attr.r]="node.r"
+      [attr.stroke]="'black'"
+      >
   </svg:circle>
-  <svg:text
+</svg:g>
+
+      <!-- [attr.fill]="node.color" -->
+      <!-- <svg:text
       class="node-name"
       [attr.font-size]="node.fontSize"
       >
     {{node.name}}
-  </svg:text>
-</svg:g>
-
-      <!-- [attr.fill]="'url('+ node.imgUrl +')'" -->
-      <!-- [attr.fill]="node.color" -->
+  </svg:text> -->

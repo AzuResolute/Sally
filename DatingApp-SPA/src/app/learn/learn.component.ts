@@ -50,7 +50,7 @@ export class LearnComponent implements OnInit {
     {
       name: 'SQL Server',
       type: 'Deployment/Storage',
-      imgUrl: '../../assets/tech/SQLServer.png'
+      imgUrl: '../../assets/tech/SQLServer.jpeg'
     },
     {
       name: 'TypeScript',
@@ -69,7 +69,7 @@ export class LearnComponent implements OnInit {
           getIndex = number => number - 1;
 
     for (let i = 1; i <= N; i++) {
-      this.nodes.push(new Node(i, this.techStack[i]));
+      this.nodes.push(new Node(i, this.techStack[i - 1]));
     }
 
     // for (let i = 0; i < this.techStack.length; i++) {
