@@ -10,21 +10,30 @@
       [attr.width]="'1'"
       [attr.preserveAspectRatio]="'none'"
       [attr.xmlns:xlink]="'http://www.w3.org/1999/xlink'"
-      [attr.xlink:href]="'$' + node.imgUrl"
+      [attr.xlink:href]="node.imgUrl"
       >
     </svg:image>
   </svg:pattern>
 </svg:defs>
 <svg:g [attr.transform]="'translate(' + node.x + ',' + node.y + ')'">
   <svg:circle
-      class="node"
-      [attr.fill]="'url(#'+ node.id +')'"
-      cx="0"
-      cy="0"
-      [attr.r]="node.r"
-      [attr.stroke]="'black'"
-      >
+    class="node"
+    [attr.fill]="'pink'"
+    [attr.fill]="'url(#'+ node.id +')'"
+    cx="0"
+    cy="0"
+    [attr.r]="node.r"
+    [attr.stroke]="'black'"
+    >
   </svg:circle>
+  <svg:text
+    class="node-name"
+    [attr.font-size]="node.fontSize"
+    [attr.text-anchor]="'middle'"
+    [attr.font-weight]="'bold'"
+    >
+    {{node.name}}
+  </svg:text>
 </svg:g>
 
       <!-- [attr.fill]="node.color" -->
@@ -34,3 +43,4 @@
       >
     {{node.name}}
   </svg:text> -->
+        <!-- [attr.xmlns:xlink]="'http://www.w3.org/1999/xlink'" -->
