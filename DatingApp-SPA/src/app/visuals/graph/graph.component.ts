@@ -37,8 +37,8 @@ export class GraphComponent implements OnInit, AfterViewInit {
 
   get options() {
     return this._options = {
-      width: Math.min(window.innerWidth, 500),
-      height: Math.min(window.innerHeight, 500)
+      width: Math.min(window.innerWidth, 800),
+      height: Math.min(window.innerHeight, 600)
     };
   }
 }

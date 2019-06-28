@@ -44,7 +44,7 @@ export class LearnComponent implements OnInit {
       imgUrl: '../../assets/tech/Cloudinary.jpg'
     },
     {
-      name: 'Azure Cloud',
+      name: 'Azure',
       type: 'Deployment/Storage',
       imgUrl: '../../assets/tech/Azure.jpg'
     },

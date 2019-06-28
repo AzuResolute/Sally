@@ -8,4 +8,11 @@ import { Node } from 'src/app/d3/models';
 })
 export class NodeVisualComponent {
   @Input('nodeVisual') node: Node;
+
+  mobile () {
+    if ('matchMedia' in window && window.matchMedia('(max-device-width: 767px)').matches) {
+      return true;
+    }
+    return false;
+  }
 }

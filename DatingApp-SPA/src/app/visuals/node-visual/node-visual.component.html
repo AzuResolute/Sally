@@ -9,7 +9,7 @@
       [attr.height]="'1'"
       [attr.width]="'1'"
       [attr.preserveAspectRatio]="'none'"
-      [attr.xmlns:xlink]="'http://www.w3.org/1999/xlink'"
+      [attr.xmlns]="'http://www.w3.org/2000/svg'"
       [attr.xlink:href]="node.imgUrl"
       >
     </svg:image>
@@ -17,17 +17,29 @@
 </svg:defs>
 <svg:g [attr.transform]="'translate(' + node.x + ',' + node.y + ')'">
   <svg:circle
+    *ngIf="!mobile()"
     class="node"
-    [attr.fill]="'pink'"
-    [attr.fill]="'url(#'+ node.id +')'"
     cx="0"
     cy="0"
     [attr.r]="node.r"
     [attr.stroke]="'black'"
+    [attr.fill]="'url(#'+ node.id +')'"
+    >
+  </svg:circle>
+  <svg:circle
+    *ngIf="mobile()"
+    class="node"
+    cx="0"
+    cy="0"
+    [attr.r]="node.r"
+    [attr.stroke]="'black'"
+    [attr.fill]="'pink'"
     >
   </svg:circle>
   <svg:text
+    *ngIf="mobile()"
     class="node-name"
+    [attr.fill]="'white'"
     [attr.font-size]="node.fontSize"
     [attr.text-anchor]="'middle'"
     [attr.font-weight]="'bold'"
