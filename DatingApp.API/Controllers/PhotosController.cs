@@ -79,8 +79,6 @@ namespace DatingApp.API.Controllers
 
             photosForCreationDto.Url = uploadResult.Uri.ToString();
             photosForCreationDto.PublicID = uploadResult.PublicId;
-
-            // _mapper.Map<Return Value>(Source);
             Photo photo = _mapper.Map<Photo>(photosForCreationDto);
 
             if(!userFromRepo.Photos.Any(u => u.IsMain)) {

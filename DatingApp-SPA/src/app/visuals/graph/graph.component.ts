@@ -4,7 +4,6 @@ import { D3Service } from '../../d3/d3.service';
 
 
 @Component({
-// tslint:disable-next-line: component-selector
   selector: 'graph',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './graph.component.html',

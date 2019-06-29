@@ -33,10 +33,8 @@ namespace DatingApp.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
-            //FirstOfDefault will, if unspecified at setup, return null
             var value = await _context.Values.FirstOrDefaultAsync(x => x.Id == id);
             return Ok(value);
-
         }
 
         // POST api/values

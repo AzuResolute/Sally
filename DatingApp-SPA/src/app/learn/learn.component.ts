@@ -15,7 +15,6 @@ export class LearnComponent implements OnInit {
     {
       name: 'Angular',
       type: 'Front-end',
-      // imgUrl: 'https://imgur.com/LpEzQyZ'
       imgUrl: '../../assets/tech/Angular.jpg'
     },
     {

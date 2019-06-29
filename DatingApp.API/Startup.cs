@@ -94,7 +94,6 @@ namespace DatingApp
         {
             if (env.IsDevelopment())
             {
-                // Globla Exceptions Handler
                 app.UseDeveloperExceptionPage();
             }
             else

@@ -126,7 +126,7 @@ namespace DatingApp.API.Data
                         u.SenderId == messageParams.UserId &&
                         !u.SenderDeleted);
                     break;
-                default: //Unread Messages
+                default:
                     messages = messages.Where(u =>
                         u.RecipientId == messageParams.UserId &&
                         !u.IsRead &&
