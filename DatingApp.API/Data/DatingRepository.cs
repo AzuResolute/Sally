@@ -75,6 +75,10 @@ namespace DatingApp.API.Data
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
+        public Task<User[]> GetUsersStats() {
+            throw new NotImplementedException();
+        }
+
         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers){
             User user = await _context.Users
                 .Include(u => u.Likers)
