@@ -75,7 +75,7 @@ namespace DatingApp.API.Data
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
-        public async Task<User[]> GetUsersStats() {
+        public Task<User[]> GetUsersStats() {
             IQueryable<User> users = _context.Users
                 .Include(u => u.Photos)
                 .OrderByDescending(u => u.Created)
